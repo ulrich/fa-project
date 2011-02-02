@@ -1,0 +1,36 @@
+
+But :
+	L'idée est de traiter des commandes composées de produits hétérogènes avec des règles de calculs simples.
+
+Contraintes :
+	- TVA 10% sur tous les produits,
+		- A l'exception des :
+			- Livres,
+			- Nourritures,
+			- Medic,
+	- TVA additionnelle de 5% sur les produits en imports,
+
+Modules :
+	- Module de catégorisation,
+		- Permet d'établir un mapping entre les données d'entrées et le domaine, en vue de les catégoriser :
+	- Module de règles :
+		- Permet d'appliquer des règles en cascade via une collection ordonnées (voir pattern visiteur ou/et chaine de
+			responsabilités),
+	- Module de lecture des données d'entrées :
+		- Permet par le biais d'une API basique de lire un flux entrant de données, l'implémentation de base sera capable
+			de lire un fichier texte (utiliser les regex),
+	- Module de sortie de résultat,
+		- Permet par le biais d'un API basique d'écrire un flux de sortie, l'implementation de base servira un fichier,
+
+Design/architecture :
+	- Package Core :
+		- Contient les sous packages :
+			- Domain,
+			- Rules,
+			- Filters,
+			- Mapper.
+	- IO :
+		- Contient les sous packages :
+			- In,
+			- Out.
+
