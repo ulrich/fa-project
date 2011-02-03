@@ -13,12 +13,12 @@ package org.uva.training.entity;
 public class Product {
    private final Type type;
    private final String name;
-   private final Origin origin;
+   private final boolean imported;
 
-   public Product(Type type, String name, Origin origin) {
+   public Product(Type type, String name, boolean imported) {
       this.type = type;
       this.name = name;
-      this.origin = origin;
+      this.imported = imported;
    }
 
    public Type getType() {
@@ -29,7 +29,7 @@ public class Product {
       return name;
    }
 
-   public Origin getOrigin() {
-      return origin;
+   public boolean isImported() {
+      return imported;
    }
 }

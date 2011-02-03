@@ -3,12 +3,14 @@ But :
 	L'idée est de traiter des commandes composées de produits hétérogènes avec des règles de calculs simples.
 
 Contraintes :
-	- TVA 10% sur tous les produits,
-		- A l'exception des :
-			- Livres,
-			- Nourritures,
-			- Medic,
-	- TVA additionnelle de 5% sur les produits en imports,
+	- Savoir interpréter un flux d'entré pour la caractériser,
+	- Savoir appliquer des règles métiers, comme :
+		- Appliquer une TVA 10% sur tous les produits,
+			- A l'exception des :
+				- Livres,
+				- Nourritures,
+				- Medic,
+		- Appliquer une TVA additionnelle de 5% sur les produits importés,
 
 Modules :
 	- Module de catégorisation,
