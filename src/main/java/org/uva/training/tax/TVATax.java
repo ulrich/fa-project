@@ -1,7 +1,6 @@
 package org.uva.training.tax;
 
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.math.util.MathUtils;
 import org.uva.training.entity.Item;
 import org.uva.training.entity.Type;
 
@@ -26,10 +25,5 @@ public class TVATax implements Tax {
    @Override
    public float getValue() {
       return value;
-   }
-
-   public static void main(String[] args) {
-      System.out.println(MathUtils.nextAfter(1.01f, 0));
-
    }
 }
