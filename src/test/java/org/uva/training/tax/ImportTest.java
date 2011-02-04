@@ -16,7 +16,7 @@ public class ImportTest {
       Product product = new Product(Type.CD, "Muse", true);
       Item item = new Item(product, 1, 10.50f);
 
-      Tax importTax = new ImportTax();
-      assertEquals(computedPrice, importTax.compute(item));
+      Tax importTax = new ImportTax(item);
+      assertEquals(computedPrice, importTax.getValue());
    }
 }

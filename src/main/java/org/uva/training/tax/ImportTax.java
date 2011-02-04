@@ -8,14 +8,19 @@ import org.uva.training.entity.Item;
  * @author uvachon
  */
 public class ImportTax implements Tax {
+   private Item item;
 
-   @Override
-   public float compute(Item item) {
-      return item.getPrice() * 0.05f;
+   public ImportTax(Item item) {
+      this.item = item;
    }
 
    @Override
-   public boolean isApplicable(Item item) {
+   public boolean isApplicable() {
       return item.getProduct().isImported();
+   }
+
+   @Override
+   public float getValue() {
+      return item.getPrice() * 0.05f;
    }
 }

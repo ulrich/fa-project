@@ -12,7 +12,7 @@ import org.apache.commons.lang.StringUtils;
  * @author uvachon
  */
 public class RawEntryBuilder {
-   private static final String ENTRY_PATTERN = "^(\\d+)\\s(\\w+.*)\\s[à]\\s(\\d+.\\d+)$";
+   private static final String ENTRY_PATTERN = "^(\\d+)\\s(\\w.*)\\sà\\s(\\d+\\.\\d+)";
    private static final Pattern PATTERN = Pattern.compile(ENTRY_PATTERN);
    private static final String IMPORT_FLAG = "import";
 

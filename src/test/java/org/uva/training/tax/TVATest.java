@@ -19,7 +19,7 @@ public class TVATest {
       Product product = new Product(Type.COSMETIC, "Parfum1", false);
       Item item = new Item(product, 1, 12.10f);
 
-      Tax tvaTax = new TVATax();
-      assertEquals(computedPrice, tvaTax.compute(item));
+      Tax tvaTax = new TVATax(item);
+      assertEquals(computedPrice, tvaTax.getValue());
    }
 }

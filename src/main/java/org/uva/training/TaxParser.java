@@ -13,15 +13,15 @@ import org.uva.training.tax.Tax;
 public class TaxParser {
 
    public void parse(Item item) {
-      Tax tvaTax = new TVATax();
+      Tax tvaTax = new TVATax(item);
       apply(item, tvaTax);
       //
-      Tax importTax = new ImportTax();
+      Tax importTax = new ImportTax(item);
       apply(item, importTax);
    }
 
    private void apply(Item item, Tax tax) {
-      if (tax.isApplicable(item)) {
+      if (tax.isApplicable()) {
          item.addTax(tax);
       }
    }

@@ -41,12 +41,25 @@ public class Item {
       return price;
    }
 
-   public Collection<Tax> getTaxes() {
-      return taxes;
-   }
-
    public void addTax(Tax tax) {
       LOG.debug("Add tax typed: " + tax.getClass().getName() + " for the product: " + product.getName());
       taxes.add(tax);
+   }
+
+   public float taxesValue() {
+      float value = 0f;
+      for (Tax tax : taxes) {
+         value += tax.getValue();
+      }
+      return value;
+   }
+
+   public float ttcValue() {
+      return price + taxesValue();
+   }
+
+   // FIXME: to remove because it used only for tests
+   public Collection<Tax> getTaxes() {
+      return taxes;
    }
 }

@@ -1,9 +1,8 @@
 package org.uva.training.tax;
 
-import org.uva.training.entity.Item;
 
 public interface Tax {
-   float compute(Item item);
+   boolean isApplicable();
 
-   boolean isApplicable(Item item);
+   float getValue();
 }
