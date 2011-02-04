@@ -10,7 +10,8 @@ import org.uva.training.utils.RawEntry;
  * This is the base class of any of {@link Product} handlers.<br/>
  * The goal is to take an {@link RawEntry} class send by sub-class and build an {@link Item} if possible.<br/>
  * <br/>
- * The method used to determine the product is the Levenshtein algorithm, but we could use another library like Lucene.<br/>
+ * The method used to determine the product is the {@link StringUtils#getLevenshteinDistance(String, String)} algorithm, but we could use another library like
+ * Lucene.<br/>
  * In this case, I would have injected a <i>ProductService</i> able to search a product by his type.
  * 
  * @author uvachon

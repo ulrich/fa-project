@@ -14,6 +14,7 @@ import org.apache.commons.lang.StringUtils;
 public class RawEntryBuilder {
    private static final String ENTRY_PATTERN = "^(\\d+)\\s(\\w+.*)\\s[à]\\s(\\d+.\\d+)$";
    private static final Pattern PATTERN = Pattern.compile(ENTRY_PATTERN);
+   private static final String IMPORT_FLAG = "import";
 
    private RawEntryBuilder() {
    }
@@ -40,10 +41,7 @@ public class RawEntryBuilder {
    // build a raw entry and help to define origin
    private static RawEntry buildAndDefineOrigin(Matcher matcher) {
       RawEntry rawEntry = new RawEntry(matcher.group(1), matcher.group(2), matcher.group(3));
-
-      if (StringUtils.contains(rawEntry.getName(), "import")) {
-         rawEntry.setImported(true);
-      }
+      rawEntry.setImported(StringUtils.contains(rawEntry.getName(), IMPORT_FLAG));
       return rawEntry;
    }
 }
