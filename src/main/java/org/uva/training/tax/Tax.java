@@ -3,7 +3,7 @@ package org.uva.training.tax;
 import org.uva.training.entity.Item;
 
 public interface Tax {
-   float getValue();
+   float compute(Item item);
 
-   void compute(Item item);
+   boolean isApplicable(Item item);
 }

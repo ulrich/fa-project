@@ -11,19 +11,15 @@ import org.uva.training.entity.Type;
  * @author uvachon
  */
 public class TVATax implements Tax {
-   private final Type[] excludedTypes = {Type.BOOK, Type.FOOD, Type.DRUG};
-   private float value = 0f;
+   private final Type[] includedTypes = {Type.CD, Type.COSMETIC};
 
    @Override
-   public void compute(Item item) {
-      if (ArrayUtils.contains(excludedTypes, item.getProduct().getType())) {
-         return;
-      }
-      value = (item.getPrice() * 0.1f);
+   public float compute(Item item) {
+      return (item.getPrice() * 0.1f);
    }
 
    @Override
-   public float getValue() {
-      return value;
+   public boolean isApplicable(Item item) {
+      return ArrayUtils.contains(includedTypes, item.getProduct().getType());
    }
 }

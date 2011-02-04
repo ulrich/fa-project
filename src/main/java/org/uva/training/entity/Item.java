@@ -3,6 +3,8 @@ package org.uva.training.entity;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.uva.training.tax.Tax;
 
 /**
@@ -11,10 +13,11 @@ import org.uva.training.tax.Tax;
  * @author uvachon
  */
 public class Item {
+   private static final Log LOG = LogFactory.getLog(Item.class);
    private final Product product;
    private final int quantity;
    private final float price;
-   private final Collection<Tax> taxes = new ArrayList<Tax>();
+   private final Collection<Tax> taxes = new ArrayList<Tax>(2);
 
    public Item(Product product, int quantity, float price) {
       this.product = product;
@@ -40,5 +43,10 @@ public class Item {
 
    public Collection<Tax> getTaxes() {
       return taxes;
+   }
+
+   public void addTax(Tax tax) {
+      LOG.debug("Add tax typed: " + tax.getClass().getName() + " for the product: " + product.getName());
+      taxes.add(tax);
    }
 }
