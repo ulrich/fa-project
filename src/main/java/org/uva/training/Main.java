@@ -3,6 +3,7 @@ package org.uva.training;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -16,10 +17,6 @@ import org.uva.training.io.writer.BillWriter;
 import org.uva.training.tax.TaxParser;
 import org.uva.training.utils.RawEntry;
 import org.uva.training.utils.RawEntryHandler;
-
-import com.google.common.base.Function;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Collections2;
 
 /**
  * Entry point of FA project.<br/>
@@ -39,7 +36,7 @@ public class Main {
       if (!this.input.exists()) {
          throw new RuntimeException("Unable to find the source file, aborting!");
       }
-      LOG.info("The file: + " + this.input.getName() + "of entry is ready to be parse");
+      LOG.info("The file: " + this.input.getName() + " is ready to be parse");
    }
 
    /**
@@ -98,17 +95,16 @@ public class Main {
 
    // returns collection of item
    private Collection<Item> getItems(Collection<RawEntry> rawEntries) {
-      return Collections2.filter(Collections2.<RawEntry, Item> transform(rawEntries, new ItemTransformer()), Predicates.notNull());
-   }
-
-   // private function based on class used to transform list
-   private class ItemTransformer implements Function<RawEntry, Item> {
       RawEntryHandler rawEntryHandler = new RawEntryHandler();
 
-      @Override
-      public Item apply(RawEntry input) {
-         return rawEntryHandler.handle(input);
+      Collection<Item> items = new ArrayList<Item>();
+      for (RawEntry rawEntry : rawEntries) {
+         Item item = rawEntryHandler.handle(rawEntry);
+         if (null != item) {
+            items.add(item);
+         }
       }
+      return items;
    }
 
    //

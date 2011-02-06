@@ -27,14 +27,14 @@ public class CDItemHandlerTest {
 
    @Test
    public void testHandlerRequestWithCDTypeRawEntry() {
-      RawEntry rawEntry = new RawEntry("3", "cd", "8");
+      RawEntry rawEntry = new RawEntry("3", "CD", "8");
       Item item = cdItemHandler.handlerRequest(rawEntry);
       assertNotNull(item);
    }
 
    @Test
    public void testHandlerRequestWithCDAndVariationTypeRawEntry() {
-      RawEntry rawEntry = new RawEntry("3", "CD", "8");
+      RawEntry rawEntry = new RawEntry("3", "Cd", "8");
       Item item = cdItemHandler.handlerRequest(rawEntry);
       assertNotNull(item);
    }
