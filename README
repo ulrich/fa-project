@@ -1,0 +1,12 @@
+﻿1. Build du projet et import dans Eclipse :
+	- mvn eclipse:eclipse -DdownloadSources=true clean install
+
+2. Lancement du projet :
+	- Il est possible de lancer le projet par Eclipse, pour cela :
+		- Ajouter les deux paramètres nécessaires au lancement de l'application dans l'onglet Arguments,
+	- Par Maven :
+		- La commande "mvn exec:java" lance par défaut le traitement sur le fichier input1.txt.
+
+3. Informations :
+	Il existe trois fichiers d'entrées et de sorties, que j'ai commité au cas, ou il ne serait pas possible de lancer
+	l'application.
