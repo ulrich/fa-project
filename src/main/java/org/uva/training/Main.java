@@ -9,8 +9,10 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.uva.training.entity.Bill;
 import org.uva.training.entity.Item;
 import org.uva.training.io.reader.EntryReader;
+import org.uva.training.io.writer.BillWriter;
 import org.uva.training.tax.TaxParser;
 import org.uva.training.utils.RawEntry;
 import org.uva.training.utils.RawEntryHandler;
@@ -27,19 +29,27 @@ import com.google.common.collect.Collections2;
  */
 public class Main {
    private static final Log LOG = LogFactory.getLog(Main.class);
-   private File source = null;
+   private File input = null;
+   private File output = null;
 
-   public Main(String file) {
-      source = new File(file);
+   public Main(String input, String output) {
+      this.input = new File(input);
+      this.output = new File(output);
 
-      if (!source.exists()) {
+      if (!this.input.exists()) {
          throw new RuntimeException("Unable to find the source file, aborting!");
       }
-      LOG.info("The file: + " + source.getName() + "of entry is ready to be parse");
+      LOG.info("The file: + " + this.input.getName() + "of entry is ready to be parse");
    }
 
    /**
-    * 
+    * Does the job:<br/>
+    * <ul>
+    * <li>Build raw entries by raw string values,</li>
+    * <li>Build item entries by raw entries values,</li>
+    * <li>Computes taxes,</li>
+    * <li>Flush output stream in file.</li>
+    * </ul>
     */
    public void doJob() {
       // building raw entries list
@@ -57,12 +67,17 @@ public class Main {
 
       LOG.info("Found " + items.size() + " item(s), it's time to compute");
 
+      // compute taxes
       TaxParser taxParser = new TaxParser();
       for (Item item : items) {
          taxParser.parse(item);
       }
+
       // building final bill and display it
-      //Bill bill = new Bill(items);
+      Bill bill = new Bill(items);
+      new BillWriter().write(bill, output);
+
+      LOG.info("Bill wrote with \"success\" (#*@?! round() method).");
    }
 
    // returns collection of raw entries
@@ -71,7 +86,7 @@ public class Main {
       Collection<RawEntry> rawEntries = null;
 
       try {
-         fileReader = new FileReader(source);
+         fileReader = new FileReader(input);
          rawEntries = new EntryReader().read(fileReader);
       } catch (FileNotFoundException e) {
          throw new RuntimeException("Unable to find the source file, aborting!");
@@ -98,10 +113,10 @@ public class Main {
 
    //
    public static void main(String[] args) {
-      if (1 != args.length) {
-         System.err.println("Missing parameter, you must to give the file of entries...");
+      if (2 != args.length) {
+         System.err.println("Missing parameters, you must give the entries file and output file informations...");
          System.exit(-1);
       }
-      new Main(args[0]).doJob();
+      new Main(args[0], args[1]).doJob();
    }
 }

@@ -25,6 +25,6 @@ public class TVATax extends AbstractTax {
 
    @Override
    public float getValue() {
-      return item.getPrice() * 0.1f;
+      return round(item.getPrice() * 0.1f);
    }
 }

@@ -21,6 +21,6 @@ public class ImportTax extends AbstractTax {
 
    @Override
    public float getValue() {
-      return item.getPrice() * 0.05f;
+      return round(item.getPrice() * 0.05f);
    }
 }

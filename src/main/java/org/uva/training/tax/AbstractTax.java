@@ -27,10 +27,12 @@ public abstract class AbstractTax implements Tax {
    /**
     * Takes a tax and around it.
     * 
+    * @FIXME to fix following rules
+    * @TODO <b>me réinscrire au collège...</b>
     * @param value the tax value to compute.
     * @return the rounded value.
     */
-   protected float around(float value) {
+   protected float round(float value) {
       return value;
    }
 }
