@@ -17,7 +17,7 @@ import org.uva.training.utils.RawEntry;
  * @author uvachon
  */
 public abstract class ProductItemHandler extends Handler<Item, RawEntry> {
-   private static final int THRESHOLD = 3;
+   private static final int THRESHOLD = 1;
 
    public ProductItemHandler(Handler<Item, RawEntry> successor) {
       super(successor);
@@ -39,7 +39,7 @@ public abstract class ProductItemHandler extends Handler<Item, RawEntry> {
       String[] terms = StringUtils.split(rawEntry.getName());
       for (String term : terms) {
          for (String keyword : keywords) {
-            if (StringUtils.getLevenshteinDistance(term, keyword) <= 1) {
+            if (StringUtils.getLevenshteinDistance(term, keyword) <= THRESHOLD) {
                Product product = new Product(type, rawEntry.getName(), rawEntry.isImported());
                item = new Item(product, Integer.parseInt(rawEntry.getQuantity()), Float.parseFloat(rawEntry.getPrice()));
             }

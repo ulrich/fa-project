@@ -28,7 +28,7 @@ public class BillWriterTest {
 
    @After
    public void after() {
-      //file.delete();
+      file.delete();
    }
 
    @Test
