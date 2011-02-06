@@ -109,4 +109,28 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
+
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.1</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>java</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <mainClass>org.uva.training.Main</mainClass>
+               <arguments>
+                  <argument>input1.txt</argument>
+                  <argument>output1.txt</argument>
+               </arguments>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 </project>
