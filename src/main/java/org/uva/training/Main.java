@@ -1,6 +1,5 @@
 package org.uva.training;
 
-
 public class Main {
 
    public Main() {

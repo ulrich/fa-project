@@ -10,10 +10,10 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class RawEntryBuilderTest {
-   private String[] goodEntries = {"1 livre à 12.49", "1 CD musical à 14.99", "1 barre de chocolat à 0.85", "1 boîte de chocolats importée à 10.00",
-         "1 flacon de parfum importé à 47.50", "1 flacon de parfum importé à 27.99", "1 flacon de parfum à 18.99",
-         "1 boîte de pilules contre la migraine à 9.75", "1 boîte de chocolats importés à 11.25"};
-   private String[] badEntries = {"livre à 12.49", "1 14.99", "1 0.85 barre de chocolat ", "1 boîte de chocolats importée 10.00"};
+   private String[] goodEntries = {"1 livre à 12.49", "1 CD musical à 14.99", "1 barre de chocolat à 0.85", "1 boite de chocolats importée à 10.00",
+         "1 flacon de parfum importé à 47.50", "1 flacon de parfum import à 27.99", "1 flacon de parfum à 18.99",
+         "1 boite de pilules contre la migraine à 9.75", "1 boite de chocolats importés à 11.25"};
+   private String[] badEntries = {"livre à 12.49", "1 14.99", "1 0.85 barre de chocolat"};
 
    @Test
    public void testValidateWithGoodEntries() {
