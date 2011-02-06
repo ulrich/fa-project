@@ -21,6 +21,11 @@
    <dependencyManagement>
       <dependencies>
          <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+         </dependency>
+         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>r07</version>
@@ -59,6 +64,10 @@
    </dependencyManagement>
 
    <dependencies>
+      <dependency>
+         <groupId>commons-collections</groupId>
+         <artifactId>commons-collections</artifactId>
+      </dependency>
       <dependency>
          <groupId>com.google.guava</groupId>
          <artifactId>guava</artifactId>
