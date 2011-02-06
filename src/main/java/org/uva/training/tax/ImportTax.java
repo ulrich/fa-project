@@ -7,7 +7,7 @@ import org.uva.training.entity.Item;
  * 
  * @author uvachon
  */
-public class ImportTax implements Tax {
+public class ImportTax extends AbstractTax {
    private Item item;
 
    public ImportTax(Item item) {

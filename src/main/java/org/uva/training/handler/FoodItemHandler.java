@@ -23,6 +23,7 @@ public class FoodItemHandler extends ProductItemHandler {
       }
       Item item = buildItem(rawEntry, Type.FOOD, KEYWORDS);
       if (null != item) {
+         log.debug("Found and built an food item");
          return item;
       }
       return super.handlerRequest(rawEntry);

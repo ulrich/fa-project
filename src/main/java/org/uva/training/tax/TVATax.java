@@ -10,7 +10,7 @@ import org.uva.training.entity.Type;
  * 
  * @author uvachon
  */
-public class TVATax implements Tax {
+public class TVATax extends AbstractTax {
    private final Type[] includedTypes = {Type.CD, Type.COSMETIC};
    private Item item;
 

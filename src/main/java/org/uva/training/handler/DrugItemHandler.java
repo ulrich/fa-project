@@ -23,6 +23,7 @@ public class DrugItemHandler extends ProductItemHandler {
       }
       Item item = buildItem(rawEntry, Type.DRUG, KEYWORDS);
       if (null != item) {
+         log.debug("Found and built a drug item");
          return item;
       }
       return super.handlerRequest(rawEntry);

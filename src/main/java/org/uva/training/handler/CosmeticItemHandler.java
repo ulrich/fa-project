@@ -23,6 +23,7 @@ public class CosmeticItemHandler extends ProductItemHandler {
       }
       Item item = buildItem(rawEntry, Type.COSMETIC, KEYWORDS);
       if (null != item) {
+         log.debug("Found and built a cosmetic item");
          return item;
       }
       return super.handlerRequest(rawEntry);

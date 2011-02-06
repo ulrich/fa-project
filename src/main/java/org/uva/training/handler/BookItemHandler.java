@@ -23,6 +23,7 @@ public class BookItemHandler extends ProductItemHandler {
       }
       Item item = buildItem(rawEntry, Type.BOOK, KEYWORDS);
       if (null != item) {
+         log.debug("Found and built a book item");
          return item;
       }
       return super.handlerRequest(rawEntry);
