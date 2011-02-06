@@ -62,7 +62,7 @@ public class BillWriter {
    private String prepareItemList(Collection<Item> items) {
       StringBuilder result = new StringBuilder();
       for (Item item : items) {
-         result.append(item.getQuantity()).append(" ").append(item.getProduct().getName()).append(" ").append(item.getPrice()).append(" ").append("\n");
+         result.append(item.getQuantity()).append(" ").append(item.getProduct().getName()).append(" ").append(item.ttcValue()).append(" ").append("\n");
       }
       return result.toString();
    }
