@@ -11,6 +11,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.uva.training.entity.Item;
 import org.uva.training.io.reader.EntryReader;
+import org.uva.training.tax.TaxParser;
 import org.uva.training.utils.RawEntry;
 import org.uva.training.utils.RawEntryHandler;
 

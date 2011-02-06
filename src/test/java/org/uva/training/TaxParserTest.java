@@ -8,6 +8,7 @@ import org.junit.runners.JUnit4;
 import org.uva.training.entity.Item;
 import org.uva.training.entity.Product;
 import org.uva.training.entity.Type;
+import org.uva.training.tax.TaxParser;
 
 @RunWith(JUnit4.class)
 public class TaxParserTest {

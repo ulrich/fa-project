@@ -1,9 +1,6 @@
-package org.uva.training;
+package org.uva.training.tax;
 
 import org.uva.training.entity.Item;
-import org.uva.training.tax.ImportTax;
-import org.uva.training.tax.TVATax;
-import org.uva.training.tax.Tax;
 
 /**
  * In this parser, we could pull taxes from <i>TaxService</i> for others taxes.

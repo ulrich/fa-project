@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.junit.After;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.uva.training.TaxParser;
+import org.uva.training.tax.TaxParser;
 
 public class BillTest {
    private Bill bill;
