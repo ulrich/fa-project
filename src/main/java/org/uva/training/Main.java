@@ -61,6 +61,8 @@ public class Main {
       for (Item item : items) {
          taxParser.parse(item);
       }
+      // building final bill and display it
+      //Bill bill = new Bill(items);
    }
 
    // returns collection of raw entries
