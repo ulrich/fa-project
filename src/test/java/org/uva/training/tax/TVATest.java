@@ -14,7 +14,7 @@ public class TVATest {
 
    @Test
    public void testCompute() {
-      float computedPrice = 1.21f;
+      float computedPrice = 1.25f;
 
       Product product = new Product(Type.COSMETIC, "Parfum1", false);
       Item item = new Item(product, 1, 12.10f);

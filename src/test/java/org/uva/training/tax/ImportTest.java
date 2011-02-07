@@ -11,7 +11,7 @@ public class ImportTest {
 
    @Test
    public void testCompute() {
-      float computedPrice = 0.52500004f;
+      float computedPrice = 0.55f;
 
       Product product = new Product(Type.CD, "Muse", true);
       Item item = new Item(product, 1, 10.50f);

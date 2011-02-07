@@ -1,6 +1,6 @@
 1 livre 12.49 
-1 CD musical 16.489 
+1 CD musical 16.49 
 1 barre de chocolat 0.85 
 
-Montant des taxes : 1.499
-Total : 29.829
+Montant des taxes : 1.5
+Total : 29.83

@@ -126,8 +126,8 @@
             <configuration>
                <mainClass>org.uva.training.Main</mainClass>
                <arguments>
-                  <argument>input1.txt</argument>
-                  <argument>output1.txt</argument>
+                  <argument>input3.txt</argument>
+                  <argument>output3.txt</argument>
                </arguments>
             </configuration>
          </plugin>
